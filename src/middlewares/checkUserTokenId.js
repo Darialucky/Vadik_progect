@@ -10,5 +10,5 @@ export const checkUserTokenId = async (req, res, next) => {
     next();
     return;
   }
-  next(createHttpError(403));
+  next(createHttpError(404));
 };

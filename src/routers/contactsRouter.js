@@ -26,12 +26,14 @@ contactRouter.use('/:contactId', checkUserTokenId);
 contactRouter.get('/', getContactsController);
 contactRouter.get('/:contactId', getContactByIdController);
 contactRouter.delete('/:contactId', deleteContactController);
+
 contactRouter.patch(
   '/:contactId',
   upload.single('photo'),
   validateBody(updateContactSchema),
   ctrlWrapper(patchContactController),
 );
+
 contactRouter.post(
   '/',
   upload.single('photo'),
